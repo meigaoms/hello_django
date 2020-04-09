@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Insta.views import HelloWorld, PostsView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, addLike, \
-    UserDetailView, toggleFollow, UserUpdateView
+    UserDetailView, toggleFollow, UserUpdateView, addComment
 
 urlpatterns = [
     path('helloworld', HelloWorld.as_view(), name='helloworld'),
@@ -28,6 +28,7 @@ urlpatterns = [
     path('user/<int:pk>/', UserDetailView.as_view(), name='user_profile'),
     path('user/update/<int:pk>', UserUpdateView.as_view(), name='update_user_profile'),
     path('like', addLike, name='add_like'),
+    path('comment', addComment, name='add_comment'),
     path('togglefollow', toggleFollow, name='toggle_follow'),
 ]
 

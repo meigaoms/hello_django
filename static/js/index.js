@@ -84,7 +84,7 @@ function create_comment(success_cb, error_cb) {
   
     $.ajax({
       type: "POST",
-      url: '/comment',
+      url: '/insta/comment',
       data: {
         comment_text: comment_text,
         post_pk: post_pk
@@ -93,6 +93,7 @@ function create_comment(success_cb, error_cb) {
       error: function(error) { error_cb(error); }
     });
 }
+
 
 function comment_update_view(data) {
     console.log(data);
@@ -103,14 +104,14 @@ function comment_update_view(data) {
     $post.closest('.view-update').find('.comment-list').append(commentHTML);
   }
   
-  $('.add-comment').on('keyup', function(e) {
+$('.add-comment').on('keyup', function(e) {
     if (enterPressed(e)) {
       if (validComment($(this).val())) {
         create_comment.call(this, comment_update_view, error_cb);
         $(this).val('');
       }
     }
-  });
+});
   
 
 /*
