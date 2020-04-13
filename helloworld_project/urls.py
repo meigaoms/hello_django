@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, url
+from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
 
@@ -25,5 +25,5 @@ urlpatterns = [
     path('insta/', include('Insta.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('auth/signup/', SignUp.as_view(), name="sign_up"),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
