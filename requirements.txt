@@ -2,3 +2,4 @@ django
 django-imagekit
 pillow
 django-annoying
+django-fontawesome-5
