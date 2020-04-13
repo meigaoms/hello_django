@@ -23,4 +23,5 @@ urlpatterns = [
     path('insta/', include('Insta.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('auth/signup/', SignUp.as_view(), name="sign_up"),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
