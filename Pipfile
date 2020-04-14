@@ -10,6 +10,9 @@ django = "*"
 django-imagekit = "*"
 pillow = "*"
 django-annoying = "*"
+postgresql = "*"
+psycopg2 = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"

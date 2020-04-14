@@ -3,3 +3,5 @@ django-imagekit==4.0.2
 Pillow==7.1.1
 django-annoying==0.10.6
 django-fontawesome-5==1.0.18
+psycopg2==2.8.5
+whitenoise==5.0.1
